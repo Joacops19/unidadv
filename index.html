@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <script>
+        // Forzamos el scroll al inicio antes de que se renderice el resto
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
+        // Y por si acaso, limpiamos la URL
+        if (window.location.hash) {
+            history.replaceState("", document.title, window.location.pathname);
+        }
+    </script>
 
     <header>
         <img src="img/UPTM_logo.png" alt="Logo de la uni" class="logo-encabezado">
