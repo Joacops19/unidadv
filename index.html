@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo de Redes - PNFI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <img src="img/UPTM_logo.png" alt="Logo de la uni" class="logo-encabezado">
+        <h1>Análisis de Protocolos de Redes</h1>
+        <p>PNFI en Informática - Unidad V</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#introduccion">Introducción</a></li>
+            <li><a href="#modelos">Modelos OSI y TCP/IP</a></li>
+            <li><a href="#comunicacion">Modelos de Comunicación</a></li>
+            <li><a href="#conflictos">Conflictos y Soluciones</a></li>
+            <li><a href="#conclusion">Conclusión</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="introduccion">
+            <h2>1. Introducción</h2>
+            <p>La comunicación en redes informáticas se basa en un conjunto de reglas y estándares conocidos como protocolos. Sin ellos, la interoperabilidad entre diferentes fabricantes y sistemas sería imposible. En este análisis, profundizaremos en las arquitecturas que permiten el flujo de datos global.</p>
+        </section>
+
+        <section id="modelos">
+            <h2>2. Modelos de Referencia: OSI vs TCP/IP</h2>
+            <p>Para entender cómo viaja la información, dividimos el proceso en capas. El modelo OSI es el estándar teórico, mientras que TCP/IP es la arquitectura real de Internet.</p>
+
+            <div class="comparativa">
+                <ul>
+                    <li><strong>Capas del Modelo OSI:</strong> Física, Enlace de datos, Red, Transporte, Sesión, Presentación y Aplicación.</li>
+                    <li><strong>Capas del Modelo TCP/IP:</strong> Acceso a red, Internet, Transporte y Aplicación.</li>
+                </ul>
+            </div>
+
+            <h3>Comparativa Técnica de Modelos</h3>
+
+            <!-- Wrapper para scroll horizontal en móvil -->
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Capa OSI</th>
+                            <th>Capa TCP/IP</th>
+                            <th>Unidad de Datos (PDU)</th>
+                            <th>Función Principal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Aplicación, Presentación, Sesión</td>
+                            <td><strong>Aplicación</strong></td>
+                            <td>Datos</td>
+                            <td>Interfaz de usuario y servicios de red (HTTP, DNS).</td>
+                        </tr>
+                        <tr>
+                            <td>Transporte</td>
+                            <td><strong>Transporte</strong></td>
+                            <td>Segmentos</td>
+                            <td>Conexión extremo a extremo y control de flujo.</td>
+                        </tr>
+                        <tr>
+                            <td>Red</td>
+                            <td><strong>Internet</strong></td>
+                            <td>Paquetes</td>
+                            <td>Direccionamiento lógico y determinación de rutas (IP).</td>
+                        </tr>
+                        <tr>
+                            <td>Enlace de Datos</td>
+                            <td><strong>Acceso a Red</strong></td>
+                            <td>Tramas</td>
+                            <td>Direccionamiento físico (MAC) y detección de errores.</td>
+                        </tr>
+                        <tr>
+                            <td>Física</td>
+                            <td><strong>Acceso a Red</strong></td>
+                            <td>Bits</td>
+                            <td>Transmisión binaria por medios físicos (cables, ondas).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Proceso de Encapsulamiento</h3>
+            <p>A medida que los datos descienden por las capas, se les añade información de control (headers). Al llegar a la Capa de Transporte se denominan <strong>Segmentos</strong>, en la Capa de Red son <strong>Paquetes</strong>, y en la de Enlace son <strong>Tramas</strong>.</p>
+        </section>
+
+        <section id="comunicacion">
+            <h2>3. Modelos de Comunicación</h2>
+            <p>Existen dos formas principales de organizar la interacción entre nodos:</p>
+            <ul>
+                <li><strong>Cliente/Servidor:</strong> Un host central (servidor) ofrece recursos y los clientes los consumen. Ejemplo: Un servidor web.</li>
+                <li><strong>De Par a Par (P2P):</strong> No hay jerarquía; cada computadora puede actuar como cliente y servidor al mismo tiempo, facilitando el intercambio de archivos directamente.</li>
+            </ul>
+        </section>
+
+        <section id="conflictos">
+            <h2>4. Conflictos de Red y Segmentación</h2>
+            <p>Para asegurar un flujo confiable, debemos gestionar los siguientes dominios:</p>
+            <div class="card-grid">
+                <article>
+                    <h3>Dominio de Colisión</h3>
+                    <p>Es el segmento donde dos dispositivos pueden transmitir al mismo tiempo provocando un choque de señales. Los <strong>Switches</strong> solucionan esto creando microsegmentos por cada puerto.</p>
+                </article>
+                <article>
+                    <h3>Dominio de Broadcast</h3>
+                    <p>Es el área donde un mensaje de difusión llega a todos los nodos. Demasiado tráfico de este tipo ralentiza la red. Los <strong>Routers</strong> se utilizan para limitar estos dominios.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="conclusion">
+            <h2>5. Conclusión</h2>
+            <p>El dominio de los protocolos de la Unidad V es vital para cualquier informático. La correcta segmentación de la red y el entendimiento de los modelos OSI/TCP/IP permiten diseñar infraestructuras robustas, escalables y eficientes, minimizando errores y maximizando la velocidad de transferencia.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Joaquín Parra</p>
+        <p>C.I: 19.995.047</p>
+    </footer>
+
+</body>
+</html>
